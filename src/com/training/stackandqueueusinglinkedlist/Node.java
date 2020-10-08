@@ -1,4 +1,3 @@
-
 package com.training.stackandqueueusinglinkedlist;
 		
 public class Node<K> {
