@@ -34,6 +34,13 @@ public class QueueUsingLinkedList<T> {
 		System.out.println();
 	}
 
+	public void deQueue() {
+
+		Node<T> temp = head;
+		head = temp.getNext();
+		System.out.println("DeQueue done");
+	}
+
 	public static void main(String[] args) {
 
 		QueueUsingLinkedList<Integer> queue = new QueueUsingLinkedList<>();
@@ -41,6 +48,11 @@ public class QueueUsingLinkedList<T> {
 		queue.enqueue(30);
 		queue.enqueue(70);
 		queue.printQueue();
+		queue.deQueue();
+		queue.printQueue();
+		queue.deQueue();
+		queue.printQueue();
+		queue.deQueue();
 
 	}
 
