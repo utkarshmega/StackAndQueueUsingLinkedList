@@ -2,8 +2,44 @@ package com.training.stackandqueueusinglinkedlist;
 
 public class StackUsingLinkedList<T> {
 
+	private Node<T> head = null;
+
+	/**
+	 * implementation to create push function of stack
+	 */
+	public void push(T value) {
+
+		Node<T> newNode = new Node<T>(value);
+		if (head == null) {
+			head = newNode;
+		}
+
+		else {
+			newNode.setNext(head);
+			head = newNode;
+		}
+	}
+
+	/**
+	 * To print stack
+	 */
+	public void printStack() {
+
+		Node<T> temp = head;
+		while (temp != null) {
+			System.out.print(temp.getKey() + "-->");
+			temp = temp.getNext();
+		}
+		System.out.println();
+	}
+
 	public static void main(String[] args) {
-		System.out.println("Welcome to Implementation of stack and queue using linked list");
+
+		StackUsingLinkedList<Integer> stack = new StackUsingLinkedList<>();
+		stack.push(70);
+		stack.push(30);
+		stack.push(56);
+		stack.printStack();
 
 	}
 
